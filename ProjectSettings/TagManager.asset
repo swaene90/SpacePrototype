@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Grass
+  - Horse
+  - Item
+  - Rapira
+  - Chest
+  - Inventory
+  - Furnace
+  - Fuel
+  - ObjectFurnace
+  - Circle
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Background
+  - 
+  - Player
+  - Horse
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Background
+    uniqueID: 1159140781
+    locked: 0
+  - name: Trees
+    uniqueID: 4186542619
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 447762139
+    locked: 0
+  - name: Foreground
+    uniqueID: 1219935417
+    locked: 0

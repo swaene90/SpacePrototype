@@ -245,13 +245,13 @@ GameObject:
   - component: {fileID: 159056910}
   - component: {fileID: 159056909}
   - component: {fileID: 159056908}
+  - component: {fileID: 159056913}
   - component: {fileID: 159056907}
   - component: {fileID: 159056912}
-  - component: {fileID: 159056913}
   - component: {fileID: 159056914}
   m_Layer: 8
   m_Name: Char
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1037,11 +1037,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1128005987}
   - component: {fileID: 1128005986}
+  - component: {fileID: 1128005988}
   - component: {fileID: 1128005985}
   - component: {fileID: 1128005984}
   m_Layer: 8
   m_Name: Circle
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1149,6 +1150,18 @@ Transform:
   m_Father: {fileID: 1229372638}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1128005988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128005983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e97ab17582045d4ca0810069174e7fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1224042930
 GameObject:
   m_ObjectHideFlags: 0

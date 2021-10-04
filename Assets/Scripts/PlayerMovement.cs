@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         //Test Console
-        Debug.Log("Hello IT7031C33");
+        //Debug.Log("Hello IT7031C33");
 
 
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
