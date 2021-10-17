@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
+    public Animator animator;
     public CharacterController2D controller;
 
     float horizontalMove = 0f;
@@ -24,12 +24,15 @@ public class PlayerMovement : MonoBehaviour
         //Test Console
         //Debug.Log("Hello IT7031C33");
 
-
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+
+        animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
         if (Input.GetButtonDown("Jump"))
         {
             jump = true;
+
+            animator.SetBool("isJumping", true);
         }
     }
 
@@ -37,6 +40,11 @@ public class PlayerMovement : MonoBehaviour
     {
         controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
         jump = false;
+    }
+
+    public void onLanding()
+    {
+        animator.SetBool("isJumping", false);
     }
 
     

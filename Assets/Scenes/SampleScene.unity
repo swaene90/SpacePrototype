@@ -414,7 +414,19 @@ MonoBehaviour:
   m_CrouchDisableCollider: {fileID: 0}
   OnLandEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 159056914}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: onLanding
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnCrouchEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -446,6 +458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 385d20f780bc2f5409480272f1294784, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 159056909}
   controller: {fileID: 159056912}
   runSpeed: 46.6
 --- !u!1 &184942250
