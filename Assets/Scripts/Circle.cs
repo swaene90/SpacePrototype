@@ -28,7 +28,13 @@ public class Circle : MonoBehaviour
         
           
     }
-    
-       
-    
+
+    private void OnDestroy()
+    {
+        
+    }
+
+
+
+
 }
