@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Circle : MonoBehaviour
+public class TitleScreen : MonoBehaviour
 {
+    public GameObject menuPanel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,11 +19,8 @@ public class Circle : MonoBehaviour
         
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    public void OnStartButton()
     {
-          
+        SceneManager.LoadScene(1);
     }
-    
-       
-    
 }
