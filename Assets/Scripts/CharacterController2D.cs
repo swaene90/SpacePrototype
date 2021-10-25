@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class CharacterController2D : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class CharacterController2D : MonoBehaviour
 	[Header("Events")]
 	[Space]
 
+	public GameObject menuPanel;
 	public UnityEvent OnLandEvent;
 
 	[System.Serializable]
@@ -30,6 +32,10 @@ public class CharacterController2D : MonoBehaviour
 
 	public BoolEvent OnCrouchEvent;
 	private bool m_wasCrouching = false;
+
+	private int TotalScore = 0;
+	public Text UiScore;
+	public Slider UiHealth;
 
 	private void Awake()
 	{
@@ -40,6 +46,14 @@ public class CharacterController2D : MonoBehaviour
 
 		if (OnCrouchEvent == null)
 			OnCrouchEvent = new BoolEvent();
+	}
+
+	void Update()
+	{
+		if (Input.GetKey("escape"))
+		{
+			menuPanel.SetActive(true);
+		}
 	}
 
 	private void FixedUpdate()
@@ -66,14 +80,36 @@ public class CharacterController2D : MonoBehaviour
         
 	}
 
-	public static void loseHealth()
+	public void loseHealth()
     {
 		health--;
+		UiHealth.value = health;
 		if (health < 1)
         {
 			Destroy(GameObject.FindWithTag("Player"));
-        }
+		}
+
     }
+
+	public void addToScore()
+	{
+		TotalScore++;
+		UiScore.text = TotalScore.ToString();
+	}
+
+	void OnCollisionEnter2D(Collision2D collision)
+	{
+		if (collision.gameObject.tag == "Coin")
+		{
+			addToScore();
+		}
+
+		if (collision.gameObject.tag == "Circle")
+		{
+			loseHealth();
+			Destroy(collision.gameObject);
+		}
+	}
 
 	public void Move(float move, bool crouch, bool jump)
 	{
@@ -157,4 +193,6 @@ public class CharacterController2D : MonoBehaviour
 		theScale.x *= -1;
 		transform.localScale = theScale;
 	}
+
+	
 }
