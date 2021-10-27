@@ -99,11 +99,6 @@ public class CharacterController2D : MonoBehaviour
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
-		if (collision.gameObject.tag == "Coin")
-		{
-			addToScore();
-		}
-
 		if (collision.gameObject.tag == "Circle")
 		{
 			loseHealth();
@@ -111,7 +106,15 @@ public class CharacterController2D : MonoBehaviour
 		}
 	}
 
-	public void Move(float move, bool crouch, bool jump)
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+		if (collision.gameObject.tag == "Coin")
+		{
+			addToScore();
+		}
+	}
+
+    public void Move(float move, bool crouch, bool jump)
 	{
 		// If crouching, check to see if the character can stand up
 		if (!crouch)
