@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CharacterController2D : MonoBehaviour
@@ -86,7 +87,7 @@ public class CharacterController2D : MonoBehaviour
 		UiHealth.value = health;
 		if (health < 1)
         {
-			Destroy(GameObject.FindWithTag("Player"));
+			SceneManager.LoadScene(1);
 		}
 
     }
