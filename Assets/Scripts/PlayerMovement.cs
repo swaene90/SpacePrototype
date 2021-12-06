@@ -49,5 +49,10 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("isJumping", false);
     }
 
+    public void Hurt()
+    {
+        animator.SetTrigger("Hurt");
+    }
+
     
 }

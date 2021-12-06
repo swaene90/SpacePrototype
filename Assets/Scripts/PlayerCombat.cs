@@ -34,6 +34,7 @@ public class PlayerCombat : MonoBehaviour
         
         foreach(var enemy in hitEnemies)
         {
+            enemy.GetComponent<BanditScript>().TakeDamage(100);
             Destroy(enemy.gameObject, .5f);
         }
     }

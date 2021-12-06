@@ -85,6 +85,9 @@ public class CharacterController2D : MonoBehaviour
     {
 		health--;
 		UiHealth.value = health;
+
+		GetComponent<PlayerMovement>().Hurt();
+
 		if (health < 1)
         {
 			SceneManager.LoadScene(1);
@@ -107,7 +110,15 @@ public class CharacterController2D : MonoBehaviour
 			loseHealth();
 			Destroy(collision.gameObject);
 		}
+
+		if (collision.gameObject.tag == "Enemies")
+		{
+			loseHealth();
+			collision.gameObject.GetComponent<BanditScript>().TakeDamage(100);
+		}
 	}
+
+	
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

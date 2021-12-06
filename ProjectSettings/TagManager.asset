@@ -15,6 +15,7 @@ TagManager:
   - ObjectFurnace
   - Circle
   - Coin
+  - Enemies
   layers:
   - Default
   - TransparentFX
