@@ -28,19 +28,26 @@ public class BanditScript : MonoBehaviour
 
         if (distToPlayer <= agroRange)
         {
-            if(transform.position.x < player.position.x)
+            
+            if (transform.position.x < player.position.x)
             {
                 rb2D.velocity = new Vector2(moveSpeed, 0);
+                //transform.localScale = new Vector2(1, 1);
             }
             else
             {
                 rb2D.velocity = new Vector2(-moveSpeed, 0);
+                //transform.localScale = new Vector2(-1, 1);
             }
+            animator.SetInteger("AnimState", 2);
         }
         else
         {
             rb2D.velocity = Vector2.zero;
+            animator.SetInteger("AnimState", 0);
         }
+
+        
     }
 
     public void TakeDamage(int damage)
@@ -49,11 +56,11 @@ public class BanditScript : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            GetComponent<Collider2D>().enabled = false;
+            this.enabled = false;
             animator.SetTrigger("Hurt");
             animator.SetTrigger("Death");
 
-            GetComponent<Collider2D>().enabled = false;
-            this.enabled = false;
         }
 
     }

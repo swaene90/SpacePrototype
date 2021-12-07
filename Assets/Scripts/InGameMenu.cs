@@ -18,6 +18,7 @@ public class InGameMenu : MonoBehaviour
 
     public void onContinueButton()
     {
+        Time.timeScale = 1;
         menuPanel.SetActive(false);
     }
 

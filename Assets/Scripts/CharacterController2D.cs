@@ -38,6 +38,8 @@ public class CharacterController2D : MonoBehaviour
 	public Text UiScore;
 	public Slider UiHealth;
 
+	public static bool gameIsPaused;
+
 	private void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -54,6 +56,7 @@ public class CharacterController2D : MonoBehaviour
 		if (Input.GetKey("escape"))
 		{
 			menuPanel.SetActive(true);
+			Time.timeScale = 0;
 		}
 	}
 
@@ -116,6 +119,11 @@ public class CharacterController2D : MonoBehaviour
 			loseHealth();
 			collision.gameObject.GetComponent<BanditScript>().TakeDamage(100);
 		}
+
+		if (collision.gameObject.tag == "Finish")
+        {
+			SceneManager.LoadScene(2);
+		}
 	}
 
 	
@@ -126,6 +134,11 @@ public class CharacterController2D : MonoBehaviour
 		{
 			addToScore();
 			Destroy(collision.gameObject, 0.1f);
+		}
+
+		if (collision.gameObject.tag == "Finish")
+		{
+			SceneManager.LoadScene(2);
 		}
 	}
 
